@@ -35,7 +35,7 @@ var ROOT_DIR = '.';
 var CONFIG_DIR = 'conf';
 var SOURCE_DIR = path.join(ROOT_DIR, 'www');
 var DEV_DIR = path.join(ROOT_DIR, 'build-dev');
-var PROD_DIR = path.join(ROOT_DIR, 'build-prod');
+var PROD_DIR = path.join(ROOT_DIR, 'docs');
 
 var DATA_DIR = path.join(SOURCE_DIR, '_data');
 var TOC_DIR = path.join(DATA_DIR, 'toc');
