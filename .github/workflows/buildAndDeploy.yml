@@ -34,5 +34,5 @@ on:
         - name: Commit
           run: |
           git add .
-          git commit -m "generated docs"
+          git commit -m "generated"
           git push
