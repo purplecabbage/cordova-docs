@@ -1,0 +1,38 @@
+name: Build and Deploy
+
+on: 
+  workflow_dispatch:
+    inputs:
+      dispatchReason:
+        description: 'Reason of Manual Deploy'
+        required: true
+        default: 'Re-run failed deployment'
+
+  push:
+    branches: [ production ]
+
+  jobs:
+    build:
+      runs-on: ubuntu-latest
+
+      steps:
+        - uses: actions/checkout@v2
+        - uses: actions/setup-ruby@v1
+          with:
+            ruby-version: '2.7'
+
+        - name: Environment Configure
+          run: |
+            npm install
+            bundle install
+        - name: Test
+          run: npm test
+
+        - name: Build
+          run: npm run build:prod
+
+        - name: Commit
+          run: |
+          git add .
+          git commit -m "generated docs"
+          git push
