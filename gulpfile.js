@@ -75,7 +75,7 @@ var WATCH_INTERVAL = 1000; // in milliseconds
 var VERSION_VAR_NAME = 'latest_docs_version';
 var LATEST_DOCS_VERSION = fs.readFileSync(VERSION_FILE, 'utf-8').trim();
 var NEXT_DOCS_VERSION = nextversion.getNextVersion(LATEST_DOCS_VERSION);
-var LANGUAGES = util.listdirsSync(DOCS_DIR);
+var LANGUAGES = ['en']; // util.listdirsSync(DOCS_DIR);
 
 var PROD_BY_DEFAULT = false;
 
